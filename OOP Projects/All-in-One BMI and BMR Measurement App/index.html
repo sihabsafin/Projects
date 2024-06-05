@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI and BMR Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-message">
+            <h1>Welcome to Our Health Companion</h1>
+        </div>
+        <div class="button-container">
+            <button id="bmiButton" class="button">BMI</button>
+            <button id="bmrButton" class="button">BMR</button>
+        </div>
+    </div>
+    <div id="bmiForm" class="form-container noDisplayForm">
+        <h2>Login and BMI Calculator</h2>
+        <form id="bmiCalc" action="calculate_bmi.php" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">Body Weight (kg):</label>
+                <input type="number" id="bmiWeight" name="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="bmiHeight" name="height" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="bmrForm" class="form-container noDisplayForm">
+        <h2>BMR Calculator</h2>
+        <form id="bmrCalc" action="calculate_bmr.php" method="post">
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age (years):</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="bmrGender" name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <button type="submit">Calculate BMR</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('bmiButton').addEventListener('click', function() {
+            document.getElementById('bmiForm').style.display = 'block';
+            document.getElementById('bmrForm').style.display = 'none';
+        });
+
+        document.getElementById('bmrButton').addEventListener('click', function() {
+            document.getElementById('bmrForm').style.display = 'block';
+            document.getElementById('bmiForm').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
