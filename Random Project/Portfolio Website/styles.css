@@ -1,0 +1,30 @@
+body {
+    background-color: #1c1c1c;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.navbar-brand img {
+    width: 50px;
+}
+
+header {
+    padding: 60px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+header .social-links a {
+    color: #00aaff;
+    margin: 0 10px;
+    font-size: 1.5em;
+    text-decoration
